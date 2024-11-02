@@ -6,11 +6,11 @@
             <a href="/posts/{{ $post['slug'] }}" class="hover:underline">
             <h2 class="mb-1 text-3xl tracking-tight font-bold text-gray-900">{{ $post ['title'] }}</h2>
             </a>
-            <div class="text-base text-gray-500 ">
+            <div>
                 By 
-                <a href="/authors/{{ $post->author->id}}" class="hover:underline">{{ $post->author->name}}</a>
+                <a href="/authors/{{ $post->author->username }}"  class=" hover:underline text-base text-gray-500 ">{{ $post->author->name}}</a>
                  in 
-                 <a href="/authors/{{ $post->author->id}}" class="hover:underline">Web Programming</a>
+                 <a href="/categories/{{ $post->category->slug}}" class="hover:underline text-base text-gray-500">{{ $post->category->name }}</a>
                 |{{ $post->created_at->diffForHumans()}}
             </div>
             <p class="my-4 font-light">{{ Str::limit($post ['body'], 150 ) }}</p>
