@@ -20,9 +20,9 @@ class PostFactory extends Factory
     {
         return [
             'title' => fake()->sentence(),
-            'author_id' => User::factory(),
+            'author_id' => User::factory(), // Menggunakan author_id untuk relasi
             'slug' => Str::slug(fake()->sentence()),
-            'body' => fake()->text()
+            'body' => fake()->text(),
         ];
     }
 }
